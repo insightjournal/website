@@ -22,7 +22,7 @@ function Featured() {
     )
 }
 
-function ContentDiv({ type, title, date, author, description, id, image }: { type: string, title: string, date: string, author: string, description: string, id: string }) {
+function ContentDiv({ type, title, date, author, description, id, image }) {
     const router = useRouter()
     const bucket = storage._bucket.bucket
     const imageRef = 'https://firebasestorage.googleapis.com/v0/b/' + bucket + '/o/' + image.NAME + '?alt=media'
@@ -62,7 +62,7 @@ function ContentDiv({ type, title, date, author, description, id, image }: { typ
     }
 }
 
-function RenderContent({ type }: { type: string }) {
+function RenderContent({ type }) {
     const [articleData, setArticleData] = useState([])
     const fetchArticles = async () => {
         const q = query(collection(database, type))
@@ -133,7 +133,7 @@ function scroll(event, direction) {
     })
 }
 
-function Section({ header, section }: { header: string, section: string }) {
+function Section({ header, section }) {
     const [scrollFactor, setScrollFactor] = useState(0)
     return (
         <div className={styles.sectionContainer}>
