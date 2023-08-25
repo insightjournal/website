@@ -39,7 +39,6 @@ function Description({ text }) {
 function Analytics({ ID, likes, comments, type }) {
     const [newLikes, setNewLikes] = useState(likes)
     const [newComments, setNewComments] = useState(comments)
-    const heartIcon = 'https://firebasestorage.googleapis.com/v0/b/insight-journal-website.appspot.com/o/heart-icon.png?alt=media'
     return (
         <div>
             <hr className={styles.divider} style={{ marginTop: '15px' }} />
