@@ -9,7 +9,7 @@ import { Lato, Playfair_Display } from 'next/font/google'
 const playfairDisplay = Playfair_Display({ subsets: ['latin'] })
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] })
 
-function Title({ text }: { text: string }) {
+function Title({ text }) {
     return (
         <p className={styles.title}
             style={playfairDisplay.style}>
@@ -18,7 +18,7 @@ function Title({ text }: { text: string }) {
     )
 }
 
-function AuthorDate({ author, date }: { author: string, date: string }) {
+function AuthorDate({ author, date }) {
     let text = author.toUpperCase() + ' | ' + date
     return (
         <p className={styles.authorDate}
@@ -28,7 +28,7 @@ function AuthorDate({ author, date }: { author: string, date: string }) {
     )
 }
 
-function Description({ text }: { text: string }) {
+function Description({ text }) {
     return (
         <p className={styles.description}>
             {text}
@@ -36,7 +36,7 @@ function Description({ text }: { text: string }) {
     )
 }
 
-function Analytics({ ID, likes, comments, type }: { ID: string, likes: number, comments: number, type: string }) {
+function Analytics({ ID, likes, comments, type }) {
     const [newLikes, setNewLikes] = useState(likes)
     const [newComments, setNewComments] = useState(comments)
     return (
@@ -108,7 +108,7 @@ function CommentSection({ comments }) {
     )
 }
 
-function Details({ title, author, date, description, content }: { title: string, author: string, date: string, description: string, content: string }) {
+function Details({ title, author, date, description, content }) {
     return (
         <div>
             <AuthorDate author={author} date={date} />
@@ -118,13 +118,13 @@ function Details({ title, author, date, description, content }: { title: string,
     )
 }
 
-function Content({ text }: { text: string }) {
+function Content({ text }) {
     return (
         <div dangerouslySetInnerHTML={{ __html: text }}></div>
     )
 }
 
-function CoverImage({ images }: { images: string }) {
+function CoverImage({ images }) {
     let coverImage = {}
     let coverExists = false
     const bucket = storage._bucket.bucket
