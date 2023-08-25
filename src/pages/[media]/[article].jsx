@@ -152,7 +152,7 @@ function CoverImage({ images }) {
     }
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     let articleData = {}
     const articleID = context.params.article
     const type = context.params.media
