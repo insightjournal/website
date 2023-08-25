@@ -60,7 +60,7 @@ function Analytics({ ID, likes, comments, type }) {
                         const docRef = doc(database, type, ID)
                         await updateDoc(docRef, { LIKES: likes })
                     }}>
-                    <img src={heartIcon} className={styles.likeImage} />
+                    <img src={heartIcon} className={styles.likeImage} alt='heart'/>
                     <p className={styles.likeNumber} style={lato.style}>{newLikes}</p>
                 </button>
                 {/*
