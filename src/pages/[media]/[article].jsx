@@ -39,6 +39,7 @@ function Description({ text }) {
 function Analytics({ ID, likes, comments, type }) {
     const [newLikes, setNewLikes] = useState(likes)
     const [newComments, setNewComments] = useState(comments)
+    const heartIcon = 'https://firebasestorage.googleapis.com/v0/b/insight-journal-website.appspot.com/o/heart-icon.png?alt=media'
     return (
         <div>
             <hr className={styles.divider} style={{ marginTop: '15px' }} />
@@ -59,7 +60,7 @@ function Analytics({ ID, likes, comments, type }) {
                         const docRef = doc(database, type, ID)
                         await updateDoc(docRef, { LIKES: likes })
                     }}>
-                    <img src='/heart-icon.png' className={styles.likeImage} />
+                    <img src={heartIcon} className={styles.likeImage} />
                     <p className={styles.likeNumber} style={lato.style}>{newLikes}</p>
                 </button>
                 {/*
