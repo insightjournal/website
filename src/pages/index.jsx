@@ -3,7 +3,7 @@ import Layout from '@/components/Layout'
 import styles from '@/styles/Home.module.css'
 import { collection, query, doc, getDoc, getDocs } from 'firebase/firestore'
 import { useState, useEffect } from 'react'
-import { Arrow, Header, Date, Title, Description } from '@/components/Utilities'
+import { Arrow, Header, Date, Title, Description, useWindowSize } from '@/components/Utilities'
 import { Lato, Playfair_Display } from 'next/font/google'
 import { useRouter } from 'next/navigation'
 
@@ -131,10 +131,14 @@ function scroll(event, direction) {
     })
 }
 
-function Section({ header, section }) {
+function Section({ header, section, location }) {
     const [scrollFactor, setScrollFactor] = useState(0)
+    let margin = '0px'
+    if (location == 'top') {
+        margin = '120px'
+    }
     return (
-        <div className={styles.sectionContainer}>
+        <div className={styles.sectionContainer} style={{ marginTop: margin }}>
             <Header text={header} />
             <div className={styles.arrowContainer}>
                 <Arrow section={section} direction='left' onClick={(e) => scroll(e, 'left')} />
@@ -146,14 +150,25 @@ function Section({ header, section }) {
 }
 
 function Home() {
-    return (
-        <Layout title='Home'>
-            <Featured />
-            <Section header='Recent News' section='news' />
-            <Section header='New Collections' section='collections' />
-            <Section header='Literary Magazine' section='magazine' />
-        </Layout>
-    )
+    let totalWidth = useWindowSize()
+    if (totalWidth <= 1000) {
+        return (
+            <Layout title='Home'>
+                <Section header='Recent News' section='news' location='top'/>
+                <Section header='New Collections' section='collections' />
+                <Section header='Literary Magazine' section='magazine' />
+            </Layout>
+        )
+    } else {
+        return (
+            <Layout title='Home'>
+                <Featured />
+                <Section header='Recent News' section='news' />
+                <Section header='New Collections' section='collections' />
+                <Section header='Literary Magazine' section='magazine' />
+            </Layout>
+        )
+    }
 }
 
 export default Home
