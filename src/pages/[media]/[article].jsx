@@ -152,6 +152,26 @@ function CoverImage({ images }) {
     }
 }
 
+export async function getStaticPaths() {
+    let paramList = []
+    const newsQuery = await getDocs(collection(database, 'news'))
+    newsQuery.forEach((document) => {
+        paramList.push({
+            params: {media: 'news', article: document.id}
+        })
+    })
+    const magazineQuery = await getDocs(collection(database, 'magazine'))
+    magazineQuery.forEach((document) => {
+        paramList.push({
+            params: {media: 'magazine', article: document.id}
+        })
+    })
+    return {
+        paths: paramList,
+        fallback: false
+    }
+}
+
 export async function getStaticProps(context) {
     let articleData = {}
     const articleID = context.params.article
