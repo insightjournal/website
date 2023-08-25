@@ -234,6 +234,7 @@ function Article(props) {
                 <div className={styles.main} style={{ display: 'inline-block' }}>
                     <Details title={props.TITLE} author={props.AUTHOR} date={props.DATE} description={props.DESCRIPTION} content={props.CONTENT} />
                     <Analytics ID={props.ID} likes={props.LIKES} type={props.TYPE} />
+                    <CoverImage images={props.IMAGES} />
                     <Content text={props.CONTENT} />
                 </div>
             </Layout>
