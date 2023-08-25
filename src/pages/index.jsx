@@ -13,11 +13,9 @@ const playfairDisplay = Playfair_Display({ subsets: ['latin'] })
 function Featured() {
     return (
         <div className={styles.featuredContainer}>
-            <Arrow direction='left' />
             <div className={styles.featuredImage}>
 
             </div>
-            <Arrow direction='right' />
         </div>
     )
 }
