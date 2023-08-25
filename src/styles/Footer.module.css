@@ -1,0 +1,47 @@
+.footer {
+    width: 100%;
+    height: 225px;
+    background-color: #5F5F5F;
+    margin-top: 50px;
+    padding: 10px;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 50px;
+}
+
+.container {
+    width: 25%;
+    min-width: 400px;
+    height: 100%;
+}
+
+.branding {
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.description {
+    margin: 0px;
+    padding: 0px;
+    font-family: Georgia;
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+.copyright {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    bottom: -70px;
+    z-index: 2;
+    font-size: 1.125em;
+    font-weight: 300;
+    color: #FFFFFF;
+}

@@ -1,0 +1,53 @@
+.featuredContainer {
+    width: 100%;
+    background-color: #F5F5F5;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 85px;
+}
+
+.featuredImage {
+    width: 85%;
+    height: 100%;
+    aspect-ratio: 10 / 4.75;
+    background-color: grey;
+}
+
+.sectionContainer {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.arrowContainer {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentContainer {
+    width: 85%;
+    display: inline-flex;
+    overflow-x: hidden;
+}
+
+.articleContainer {
+    min-width: 300px;
+    max-width: 300px;
+    margin-right: 50px;
+}
+
+    .articleContainer:last-of-type {
+        margin: 0px;
+    }
+
+.image {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #F5F5F5;
+    margin-bottom: 0px;
+    object-fit: cover;
+    background-color: grey;
+}
