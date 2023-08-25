@@ -12,6 +12,12 @@
     z-index: 1;
 }
 
+@media (max-width: 1000px) {
+    .navBar {
+        position: relative;
+    }
+}
+
 .logo {
     background-color: transparent;
     border: none;
